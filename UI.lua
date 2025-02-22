@@ -2634,21 +2634,24 @@ do
 			Inline.Parent = Outline
 
 
-			task.spawn(function()
-				while task.wait() do
-					for i = 1, #Library.cheatname..' '..Library.gamename do
-						Watermark.AnimateText = string.sub(Library.cheatname..' '..Library.gamename, 1, i) .. ""
-						Title.Text = Watermark.AnimateText .. " " .. Watermark.Name
-						task.wait(0.4)
-					end
-
-					for i = #Library.cheatname..' '..Library.gamename - 1, 1, -1 do
-						Watermark.AnimateText = string.sub(Library.cheatname..' '..Library.gamename, 1, i) .. ""
-						Title.Text = Watermark.AnimateText .. " " .. Watermark.Name
-						task.wait(0.4)
-					end
-				end
-			end)
+            task.spawn(function()
+                while task.wait() do
+                    local text = Library.cheatname .. " " .. Library.gamename;
+                    local textLength = #text;
+            
+                    for i = 1, textLength do
+                        Watermark.AnimateText = string.sub(text, 1, i)
+                        Title.Text = Watermark.AnimateText .. " " .. Watermark.Name
+                        task.wait(0.4)
+                    end
+            
+                    for i = textLength - 1, 1, -1 do
+                        Watermark.AnimateText = string.sub(text, 1, i)
+                        Title.Text = Watermark.AnimateText .. " " .. Watermark.Name
+                        task.wait(0.4)
+                    end;
+                end;
+            end);            
 			-- // Functions
 			function Watermark:UpdateText(NewText)
 				Watermark.Name = NewText
