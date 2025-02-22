@@ -2755,10 +2755,6 @@ do
 				Players.LocalPlayer:Kick('['..Library.cheatname..']'..' Rejoining Game')
 				game:GetService("TeleportService"):Teleport(game.PlaceId);
 			end})
-
-			window:Button({Name = "Remove Voice Chat Ban", Callback = function()
-				game:GetService("VoiceChatService"):joinVoice()
-			end})
 		end
 		--
 	end
