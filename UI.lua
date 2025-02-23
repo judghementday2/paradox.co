@@ -19,7 +19,7 @@ do
 		ScreenGUI = nil,
 		DropdownOpen = false,
 		OptionListOpen = false,
-		Accent = startupArgs.color or Color3.fromRGB(20,4,96),
+		Accent = startupArgs.color or Color3.fromRGB(150,0,0),
 		cheatname = startupArgs.cheatname or 'Title',
 		gamename = startupArgs.gamename or 'Unknown',
 		logo = startupArgs.logo or '17673929618',
