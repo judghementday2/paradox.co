@@ -2737,10 +2737,8 @@ do
 			window:Keybind({Name = "UI Toggle", Flag = "ui_toggle", Default = Enum.KeyCode.RightShift, UseKey = true, Callback = function(key)
 				Library.UIKey = key
 			end})
-	
-			window:Toggle({Name = "Watermark", Flag = "ui_watermark", Callback = function(state)
-				watermark:SetVisible(state)
-			end})
+
+			watermark:SetVisible(false)
 	
 			window:Colorpicker({Name = "Menu Accent", Flag = "MenuAccent", Default = Library.Accent, Callback = function(state)
 				Library:ChangeAccent(state)
